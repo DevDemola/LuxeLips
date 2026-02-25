@@ -48,39 +48,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      {/* Premium Newsletter Section */}
-      <div className="footer-newsletter">
-        <div className="newsletter-content">
-          <GiQueenCrown className="newsletter-icon" />
-          <h3 className="newsletter-title">Join the Luxe Lips Family</h3>
-          <p className="newsletter-text">
-            Subscribe for 15% off your first order and receive exclusive updates
-            on new collections, beauty tips, and special offers.
-          </p>
-
-          <form className="newsletter-form">
-            <div className="form-group">
-              <FiMail className="input-icon" />
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="newsletter-input"
-              />
-              <button type="submit" className="newsletter-submit">
-                Subscribe
-                <FiArrowRight className="submit-icon" />
-              </button>
-            </div>
-            <label className="privacy-checkbox">
-              <input type="checkbox" defaultChecked />
-              <span>
-                I agree to receive marketing emails and accept the privacy
-                policy
-              </span>
-            </label>
-          </form>
-        </div>
-      </div>
+     
 
       {/* Main Footer Content */}
       <div className="footer-main">

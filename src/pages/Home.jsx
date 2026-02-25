@@ -310,16 +310,11 @@ const Home = () => {
           <p>
             Subscribe to receive beauty tips, exclusive offers, and new arrivals
           </p>
-          <form className="newsletter-form">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="newsletter-input"
-            />
+          
             <button type="submit" className="newsletter-btn">
               Subscribe <HiArrowRight className="btn-icon" />
             </button>
-          </form>
+          
           <div className="trust-badges">
             <span>
               <HiOutlineShieldCheck /> Secure checkout
