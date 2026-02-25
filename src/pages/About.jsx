@@ -31,14 +31,14 @@ const AboutPage = () => {
       name: "Isabella Rossi",
       role: "Co-Founder & Creative Director",
       bio: "With 15 years in luxury beauty, Isabella brings her passion for color and formulation to every product.",
-      image: "/public/b6aaa63db3e59908f44cb9f4edc678ef.jpg",
+      image: "/person1.jpg",
       signature: "Isabella Rossi"
     },
     {
       name: "Sophia Chen",
       role: "Co-Founder & Formulation Expert",
       bio: "A cosmetic chemist with a vision for clean, high-performance ingredients that actually work.",
-      image: "/public/0b2e988dcec7af0209aa42d919c6967b.jpg",
+      image: "/person2.jpg",
       signature: "Sophia Chen"
     }
   ];
@@ -129,7 +129,7 @@ const AboutPage = () => {
           </div>
           
           <div className="philosophy-image">
-            <img src="/public/744c936f01c064728a22944c59a0fa95.jpg" alt="Luxury lipstick on marble" />
+            <img src="/image3.jpg" alt="Luxury lipstick on marble" />
             <div className="image-accent"></div>
           </div>
         </div>
@@ -219,7 +219,7 @@ const AboutPage = () => {
       <section className="craftsmanship-section">
         <div className="craftsmanship-container">
           <div className="craftsmanship-image">
-            <img src="/public/ec0d02759b5f244038714eb89ee73850.jpg" alt="Crafting lipstick" />
+            <img src="/image4.jpg" alt="Crafting lipstick" />
             <div className="craftsmanship-badge">
               <GiSparkles className="badge-icon" />
               <span>Handcrafted with love</span>
@@ -308,7 +308,7 @@ const AboutPage = () => {
           {[1, 2, 3, 4].map((item) => (
             <div key={item} className="team-member">
               <div className="member-image">
-                <img src={`/public/f718a7c6290bcacf48f118915e6b9c5b.jpg`} alt="Team member" />
+                <img src={`/person3.jpg`} alt="Team member" />
               </div>
               {/* <h4 className="member-name">Team Member {item}</h4> */}
               <p className="member-role">Sales Manager</p>
