@@ -1,4 +1,3 @@
-/* Header.css */
 .header {
   position: fixed;
   top: 0;
@@ -6,124 +5,382 @@
   width: 100%;
   z-index: 1000;
   background: transparent;
-  transition: all 0.3s ease;
-  padding: 1.5rem 2rem 0.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.8rem 2rem 0.8rem;
+  /* margin-bottom: 70px; */
+  font-family: "Montserrat", sans-serif;
 }
 
 .header.scrolled {
-  background: white;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
   padding: 1rem 2rem 0.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
+
+/* ============================= */
+/* LEFT SECTION (BALANCE) */
+/* ============================= */
 
 .header-left {
-  width: 120px; /* Balances the right side icons */
+  width: 140px;
 }
 
-/* Logo */
+/* ============================= */
+/* LOGO WITH CROWN ICON */
+/* ============================= */
+
 .logo {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-icon {
+  font-size: 2.2rem;
+  color: #b76e6e;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(183, 110, 110, 0.2));
+}
+
+.header.scrolled .logo-icon {
+  color: #b76e6e;
+  font-size: 2rem;
 }
 
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 3px;
-  color: #000;
-  text-transform: uppercase;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+  font-family: "Playfair Display", serif;
 }
 
-/* Right side icons */
+.header.scrolled .logo-text {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+}
+
+/* ============================= */
+/* RIGHT SECTION - ICONS */
+/* ============================= */
+
 .header-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  width: 120px;
+  gap: 1.8rem;
+  width: 140px;
   justify-content: flex-end;
 }
 
 .icon {
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.3rem;
+  color: #1a1a1a;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.header.scrolled .icon {
+  color: #333;
 }
 
 .icon:hover {
-  color: #d44e4e;
+  color: #b76e6e;
+  transform: translateY(-2px);
 }
 
-/* Desktop Navigation */
+/* Optional: Add cart count badge */
+.icon:nth-child(2) {
+  position: relative;
+}
+
+.icon:nth-child(2)::after {
+  content: "0";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #b76e6e;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show badge when cart has items - add class dynamically */
+.icon.has-items::after {
+  opacity: 1;
+}
+
+/* ============================= */
+/* DESKTOP NAVIGATION */
+/* ============================= */
+
 .desktop-nav {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 1rem auto 0;
+  gap: 3.5rem;
+  max-width: 1440px;
+  margin: 1.2rem auto 0;
   padding: 0.5rem 0;
+  position: relative;
 }
 
 .desktop-nav a {
   text-decoration: none;
-  color: #555;
+  color: #4a4a4a;
   font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: color 0.2s ease;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
   text-transform: uppercase;
-}
-
-.desktop-nav a:hover {
-  color: #d44e4e;
+  position: relative;
+  padding: 0.3rem 0;
 }
 
 .header.scrolled .desktop-nav a {
-  color: #555;
+  color: #4a4a4a;
 }
 
-/* Mobile elements */
+.desktop-nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #b76e6e,
+    #d4af37,
+    #b76e6e,
+    transparent
+  );
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.desktop-nav a:hover {
+  color: #b76e6e;
+}
+
+.desktop-nav a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ============================= */
+/* MOBILE MENU BUTTON */
+/* ============================= */
+
 .mobile-menu-btn {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
-  color: #333;
+  color: #1a1a1a;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  line-height: 1;
 }
+
+.mobile-menu-btn:hover {
+  color: #b76e6e;
+  transform: scale(1.1);
+}
+
+/* ============================= */
+/* MOBILE MENU */
+/* ============================= */
 
 .mobile-menu {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background: white;
-  padding: 1rem;
-  margin-top: 1rem;
-  border-top: 1px solid #eee;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(183, 110, 110, 0.1);
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile-menu a {
   display: block;
-  padding: 1rem;
+  padding: 1.2rem 1rem;
   text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #f5f5f5;
+  color: #1a1a1a;
+  border-bottom: 1px solid rgba(183, 110, 110, 0.1);
   text-align: center;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 .mobile-menu a:last-child {
   border-bottom: none;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.mobile-menu a:hover {
+  color: #b76e6e;
+  background: rgba(183, 110, 110, 0.03);
+  padding-left: 2rem;
+  letter-spacing: 3px;
+}
+
+/* ============================= */
+/* RESPONSIVE BREAKPOINTS */
+/* ============================= */
+
+/* Extra Large Devices (1400px and up) */
+@media (min-width: 1400px) {
+  .header-container {
+    padding: 0 1rem;
+  }
+
+  .logo-icon {
+    font-size: 2.4rem;
+  }
+
+  .logo-text {
+    font-size: 1.6rem;
+  }
+}
+
+/* Large Devices (1200px to 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
   .header {
-    padding: 1rem;
+    padding: 1.8rem 2rem 0.8rem;
+  }
+
+  .desktop-nav {
+    gap: 3rem;
+  }
+}
+
+/* Medium Devices (992px to 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .header {
+    padding: 1.5rem 2rem 0.8rem;
+  }
+
+  .header-left,
+  .header-right {
+    width: 120px;
+  }
+
+  .desktop-nav {
+    gap: 2.5rem;
+  }
+
+  .desktop-nav a {
+    font-size: 0.85rem;
+    letter-spacing: 1.2px;
+  }
+
+  .logo-icon {
+    font-size: 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small Devices / Tablets (768px to 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .header {
+    padding: 1.2rem 1.5rem 0.6rem;
+  }
+
+  .header.scrolled {
+    padding: 0.8rem 1.5rem 0.5rem;
+  }
+
+  .header-left,
+  .header-right {
+    width: 100px;
+  }
+
+  .header-right {
+    gap: 1.2rem;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+
+  .desktop-nav {
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .desktop-nav a {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* Extra Small Devices / Large Phones (576px to 767px) */
+@media (max-width: 767px) {
+  .header {
+    padding: 1rem 1.2rem 0.5rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+  }
+
+  .header.scrolled {
+    padding: 0.8rem 1.2rem 0.5rem;
   }
 
   .desktop-nav {
@@ -131,7 +388,9 @@
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .mobile-menu {
@@ -144,14 +403,149 @@
 
   .header-right {
     width: auto;
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
-  .icon:not(:last-of-type) {
-    display: none; /* Hide icons on mobile except menu */
+  /* Hide search and user icons on mobile, keep cart and menu */
+  .icon:nth-child(1),
+  .icon:nth-child(3) {
+    display: none;
+  }
+
+  .icon:nth-child(2) {
+    display: flex;
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    gap: 0.5rem;
+  }
+
+  .logo-icon {
+    font-size: 1.6rem;
   }
 
   .logo-text {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  /* Cart badge adjustment for mobile */
+  .icon:nth-child(2)::after {
+    width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+    top: -6px;
+    right: -6px;
+  }
+}
+
+/* Small Phones (375px to 575px) */
+@media (max-width: 575px) {
+  .header {
+    padding: 0.8rem 1rem 0.5rem;
+  }
+
+  .header.scrolled {
+    padding: 0.6rem 1rem 0.5rem;
+  }
+
+  .logo-icon {
+    font-size: 1.4rem;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+
+  .icon:nth-child(2) {
     font-size: 1.2rem;
+  }
+
+  .mobile-menu-btn {
+    font-size: 1.4rem;
+    padding: 0.3rem;
+  }
+
+  .mobile-menu a {
+    padding: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+  }
+
+  /* Cart badge adjustment for small phones */
+  .icon:nth-child(2)::after {
+    width: 14px;
+    height: 14px;
+    font-size: 0.55rem;
+    top: -5px;
+    right: -5px;
+  }
+}
+
+/* Extra Small Phones (below 375px) */
+@media (max-width: 374px) {
+  .logo-icon {
+    font-size: 1.2rem;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .icon:nth-child(2) {
+    font-size: 1.1rem;
+  }
+
+  .mobile-menu-btn {
+    font-size: 1.3rem;
+  }
+
+  .mobile-menu a {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 500px) and (orientation: landscape) {
+  .mobile-menu {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .mobile-menu a {
+    padding: 0.8rem;
+  }
+}
+
+/* High-DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-icon {
+    filter: drop-shadow(0 2px 4px rgba(183, 110, 110, 0.15));
+  }
+}
+
+
+
+/* Print Styles */
+@media print {
+  .header {
+    display: none;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .icon:hover,
+  .mobile-menu-btn:hover,
+  .desktop-nav a:hover {
+    transform: none;
+  }
+
+  .mobile-menu a {
+    padding: 1.2rem;
   }
 }

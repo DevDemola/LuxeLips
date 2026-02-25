@@ -26,6 +26,7 @@
   border-radius: 40px;
   overflow: hidden;
   display: flex;
+  margin-top: 70px;
   justify-content: space-between;
   align-items: center;
 }

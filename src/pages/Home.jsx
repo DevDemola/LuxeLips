@@ -13,7 +13,7 @@ import { GiLipstick, GiFlowerTwirl, GiQueenCrown } from "react-icons/gi";
 import { RiLeafLine, RiCustomerServiceLine, RiTruckLine } from "react-icons/ri";
 import { MdOutlineSpa, MdOutlineColorLens } from "react-icons/md";
 import "./Home.css";
-
+import { Link } from "react-router-dom";
 const Home = () => {
   const featuredProducts = [
     {
@@ -96,12 +96,9 @@ const Home = () => {
             comfort, and stunning colors to enhance your natural beauty.
           </p>
           <div className="hero-actions">
-            <button className="explore-btn">
+            <Link to="/products" className="explore-btn" href="#products">
               Explore Collection <HiArrowRight className="btn-icon" />
-            </button>
-            <button className="watch-btn">
-              <HiOutlineHeart className="btn-icon" /> Watch Story
-            </button>
+            </Link>
           </div>
           <div className="hero-stats">
             <div className="stat-item">
@@ -190,9 +187,9 @@ const Home = () => {
             <span className="section-subtitle">Shop Our Bestsellers</span>
             <h2 className="section-title">Most Loved Products</h2>
           </div>
-          <button className="view-all-btn">
+          <Link to="/products" className="view-all-btn">
             View All <HiOutlineChevronRight className="btn-icon" />
-          </button>
+          </Link>
         </div>
         <div className="product-grid">
           {featuredProducts.map((product) => (
@@ -310,11 +307,11 @@ const Home = () => {
           <p>
             Subscribe to receive beauty tips, exclusive offers, and new arrivals
           </p>
-          
-            <button type="submit" className="newsletter-btn">
-              Subscribe <HiArrowRight className="btn-icon" />
-            </button>
-          
+
+          <button type="submit" className="newsletter-btn">
+            Subscribe <HiArrowRight className="btn-icon" />
+          </button>
+
           <div className="trust-badges">
             <span>
               <HiOutlineShieldCheck /> Secure checkout

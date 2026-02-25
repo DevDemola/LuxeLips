@@ -1,6 +1,7 @@
 // Header.tsx
 import React, { useState, useEffect } from "react";
 import { FiShoppingCart, FiUser, FiSearch, FiMenu, FiX } from "react-icons/fi";
+import { GiQueenCrown } from "react-icons/gi";
 import "./Header.css";
 
 const Header = () => {
@@ -18,12 +19,12 @@ const Header = () => {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-container">
-        
         {/* Left side - empty for balance */}
         <div className="header-left"></div>
 
-        {/* Center - Logo */}
+        {/* Center - Logo with Crown Icon */}
         <div className="logo">
+          <GiQueenCrown className="logo-icon" />
           <span className="logo-text">LUXE LIPS</span>
         </div>
 
@@ -32,32 +33,40 @@ const Header = () => {
           <FiSearch className="icon" />
           <FiShoppingCart className="icon" />
           <FiUser className="icon" />
-          
+
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="mobile-menu-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
       </div>
 
-      
       <nav className="desktop-nav">
-        <a href="/">Home</a>
-        <a href="/products">Products</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="mobile-menu">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="#" onClick={() => setMobileMenuOpen(false)}>
+            Home
+          </a>
+          <a href="#products" onClick={() => setMobileMenuOpen(false)}>
+            Products
+          </a>
+          <a href="#about" onClick={() => setMobileMenuOpen(false)}>
+            About
+          </a>
+          <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
+            Contact
+          </a>
         </div>
       )}
     </header>
