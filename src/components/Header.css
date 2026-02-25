@@ -1,0 +1,157 @@
+/* Header.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: all 0.3s ease;
+  padding: 1.5rem 2rem 0.5rem;
+}
+
+.header.scrolled {
+  background: white;
+  padding: 1rem 2rem 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  width: 120px; /* Balances the right side icons */
+}
+
+/* Logo */
+.logo {
+  text-align: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+/* Right side icons */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 120px;
+  justify-content: flex-end;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.icon:hover {
+  color: #d44e4e;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding: 0.5rem 0;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+}
+
+.desktop-nav a:hover {
+  color: #d44e4e;
+}
+
+.header.scrolled .desktop-nav a {
+  color: #555;
+}
+
+/* Mobile elements */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.mobile-menu {
+  display: none;
+  background: white;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #f5f5f5;
+  text-align: center;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .header-left {
+    display: none;
+  }
+
+  .header-right {
+    width: auto;
+    gap: 1rem;
+  }
+
+  .icon:not(:last-of-type) {
+    display: none; /* Hide icons on mobile except menu */
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
+}
