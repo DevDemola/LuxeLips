@@ -43,7 +43,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Desktop Navigation - Centered below logo */}
+      
       <nav className="desktop-nav">
         <a href="/">Home</a>
         <a href="/products">Products</a>
