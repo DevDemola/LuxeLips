@@ -1,0 +1,34 @@
+/* components/SimpleCartIcon.css */
+.simple-cart-icon {
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.simple-cart-icon:hover {
+  color: #b76e6e;
+}
+
+.simple-cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #b76e6e;
+  color: white;
+  font-size: 0.7rem;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}

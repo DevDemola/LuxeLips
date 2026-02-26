@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import ProductsPage from "./pages/ProductListing";
 import About from "./pages/About";
+import ContactUs from "./pages/Contactus";
+import { CartProvider } from "./context/CartContext";
+import SimpleCartToast from "./components/SimpleCartToast";
 
 const App = () => {
   // In your main App component or Footer component
@@ -25,13 +28,16 @@ const App = () => {
   }, []);
   return (
     <div>
-      <Header />
-         <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/products" element={<ProductsPage />} />
-      <Route path="/about" element={<About />} />
-    </Routes>
-
+      <CartProvider>
+        <SimpleCartToast/>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Routes>
+      </CartProvider>
 
       <Footer />
     </div>

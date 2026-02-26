@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FiShoppingCart, FiUser, FiSearch, FiMenu, FiX } from "react-icons/fi";
 import { GiQueenCrown } from "react-icons/gi";
 import "./Header.css";
+import SimpleCartIcon from "./SimpleCartIcon";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +32,7 @@ const Header = () => {
         {/* Right side - Icons */}
         <div className="header-right">
           <FiSearch className="icon" />
-          <FiShoppingCart className="icon" />
+          <SimpleCartIcon className="icon" />
           <FiUser className="icon" />
 
           {/* Mobile Menu Button */}

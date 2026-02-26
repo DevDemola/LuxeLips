@@ -12,6 +12,7 @@ import {
 import { GiQueenCrown, GiLipstick } from "react-icons/gi";
 import { RiSparklingLine, RiLeafLine } from "react-icons/ri";
 import "./ProductListing.css";
+import AddToCartButton from "../components/AddToCartButton";
 
 const ProductsListingPage = () => {
   const [viewMode, setViewMode] = useState("grid");
@@ -387,11 +388,7 @@ const ProductsListingPage = () => {
                   )}
                 </div>
 
-                {/* Add to Cart Button */}
-                <button className="add-to-cart-mini">
-                  <GiLipstick className="cart-icon" />
-                  Add to Cart
-                </button>
+                <AddToCartButton product={product} />
               </div>
 
               {/* List View Extra Info */}
