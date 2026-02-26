@@ -24,7 +24,7 @@ import {
   RiMailSendLine,
   RiHeartLine
 } from "react-icons/ri";
-import "./ContactUs.css";
+import "./Contact.css";
 
 const Contact= () => {
   const [formData, setFormData] = useState({
