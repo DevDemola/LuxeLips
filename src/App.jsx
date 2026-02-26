@@ -5,9 +5,10 @@ import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import ProductsPage from "./pages/ProductListing";
 import About from "./pages/About";
-import ContactUs from "./pages/Contactus";
+
 import { CartProvider } from "./context/CartContext";
 import SimpleCartToast from "./components/SimpleCartToast";
+import Contact from "./pages/Contact";
 
 const App = () => {
   // In your main App component or Footer component
@@ -35,7 +36,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/contact" element={<Contact/>} />
         </Routes>
       </CartProvider>
 

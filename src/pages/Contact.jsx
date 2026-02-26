@@ -26,7 +26,7 @@ import {
 } from "react-icons/ri";
 import "./ContactUs.css";
 
-const ContactUs = () => {
+const Contact= () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -419,4 +419,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Contact;
