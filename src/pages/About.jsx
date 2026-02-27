@@ -97,9 +97,9 @@ const AboutPage = () => {
             Where science meets beauty, and every product tells a story of passion, 
             innovation, and uncompromising quality.
           </p>
-          <div className="hero-decoration">
+          {/* <div className="hero-decoration">
             <GiQueenCrown className="decoration-crown" />
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -298,7 +298,7 @@ const AboutPage = () => {
       </section>
 
       {/* Team Section */}
-      <section className="team-section">
+      {/* <section className="team-section">
         <div className="team-header">
           <span className="section-subtitle">Our Family</span>
           <h2 className="section-title-about">The People Behind the Magic</h2>
@@ -310,12 +310,11 @@ const AboutPage = () => {
               <div className="member-image">
                 <img src={`/person3.jpg`} alt="Team member" />
               </div>
-              {/* <h4 className="member-name">Team Member {item}</h4> */}
               <p className="member-role">Sales Manager</p>
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="about-cta">

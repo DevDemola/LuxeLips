@@ -2,10 +2,10 @@
 
 .about-page {
   width: 100%;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   margin: 0 auto;
   padding: 0;
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
   background: #fcfaf7;
   color: #1a1a1a;
   overflow-x: hidden;
@@ -19,7 +19,7 @@
   text-transform: uppercase;
   color: #b76e6e;
   margin-bottom: 0.8rem;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
 }
 
 .section-title-about {
@@ -73,7 +73,7 @@
   text-transform: uppercase;
   color: #d4af37;
   margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   background: rgba(255,255,255,0.1);
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
@@ -102,7 +102,7 @@
   max-width: 600px;
   margin: 0 auto;
   opacity: 0.9;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-weight: 300;
 }
 
@@ -153,7 +153,7 @@
   line-height: 1.8;
   color: #4a4a4a;
   margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-weight: 300;
 }
 
@@ -317,7 +317,7 @@
   color: #6b6b6b;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-size: 0.95rem;
 }
 
@@ -367,7 +367,7 @@
   color: #b76e6e;
   min-width: 100px;
   text-align: right;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
 }
 
 .timeline-content {
@@ -386,7 +386,7 @@
 .timeline-desc {
   color: #6b6b6b;
   line-height: 1.6;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-size: 0.95rem;
 }
 
@@ -485,13 +485,13 @@
   color: #6b6b6b;
   line-height: 1.7;
   margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-size: 0.95rem;
 }
 
 .founder-signature {
   font-size: 1.1rem;
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
   font-style: italic;
   color: #b76e6e;
   position: relative;
@@ -594,7 +594,7 @@
 .step-content p {
   color: #6b6b6b;
   line-height: 1.6;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-size: 0.95rem;
 }
 
@@ -653,7 +653,7 @@
   line-height: 1.8;
   margin-bottom: 3rem;
   opacity: 0.9;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-weight: 300;
 }
 
@@ -753,7 +753,7 @@
 
 .cta-crown {
   font-size: 3rem;
-  color: #d4af37;
+  color: #be123c;
   margin-bottom: 2rem;
 }
 
@@ -767,7 +767,7 @@
 .cta-text {
   color: #6b6b6b;
   margin-bottom: 2rem;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-size: 1.1rem;
 }
 

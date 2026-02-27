@@ -84,7 +84,7 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-content">
           <span className="collection-badge">
-            <HiOutlineSparkles className="badge-icon" />
+            <HiOutlineSparkles className="badge-icons" />
             New Collection Available
           </span>
           <h1 className="hero-title">
@@ -130,11 +130,11 @@ const Home = () => {
             className="product-image"
           />
           <div className="floating-badge badge-1">
-            <GiQueenCrown className="badge-icon" />
+            <GiQueenCrown className="badge-icons" />
             <span>Luxury</span>
           </div>
           <div className="floating-badge badge-2">
-            <HiOutlineShieldCheck className="badge-icon" />
+            <HiOutlineShieldCheck className="badge-icons" />
             <span>Certified</span>
           </div>
         </div>

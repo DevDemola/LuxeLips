@@ -8,7 +8,7 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 1.8rem 2rem 0.8rem;
   /* margin-bottom: 70px; */
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
 }
 
 .header.scrolled {
@@ -69,7 +69,7 @@
   letter-spacing: 3px;
   color: #1a1a1a;
   transition: all 0.3s ease;
-  font-family: "Playfair Display", serif;
+  /* font-family: "Playfair Display", serif; */
 }
 
 .header.scrolled .logo-text {

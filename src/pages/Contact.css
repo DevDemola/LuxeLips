@@ -1,9 +1,9 @@
 .contact-page {
   width: 100%;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   margin: 0 auto;
   padding: 0;
-  font-family: "Playfair Display", serif;
+  /* font-family: "Playfair Display", serif; */
   background: #fcfaf7;
   color: #1a1a1a;
   overflow-x: hidden;
@@ -17,7 +17,7 @@
   text-transform: uppercase;
   color: #b76e6e;
   margin-bottom: 0.8rem;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
 }
 
 .section-title-contact {
@@ -41,6 +41,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  /* margin-top: 30px; */
   margin-bottom: 3rem;
   overflow: hidden;
 }
@@ -70,6 +71,7 @@
 .hero-crown {
   font-size: 3.5rem;
   color: #d4af37;
+  margin-top: 100px;
   margin-bottom: 1.5rem;
   animation: crownFloat 3s ease-in-out infinite;
 }
@@ -89,9 +91,9 @@
   font-size: 0.8rem;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #d4af37;
+  /* color: #d4af37; */
   margin-bottom: 1.5rem;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   background: rgba(255, 255, 255, 0.1);
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
@@ -111,8 +113,8 @@
   max-width: 600px;
   margin: 0 auto;
   opacity: 0.9;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
+  /* font-family: "Montserrat", sans-serif; */
+  font-weight: 00;
 }
 
 .hero-scroll {
