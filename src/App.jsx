@@ -1,48 +1,61 @@
-import React, { useEffect } from "react";
-import Header from "./components/Header";
+import { lazy, Suspense, useEffect } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import AnnouncementBar from "./components/layout/AnnouncementBar";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import CartDrawer from "./components/cart/CartDrawer";
+import SearchOverlay from "./components/search/SearchOverlay";
+import Toast from "./components/ui/Toast";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import { Route, Routes } from "react-router-dom";
-import ProductsPage from "./pages/ProductListing";
-import About from "./pages/About";
 
-import { CartProvider } from "./context/CartContext";
-import SimpleCartToast from "./components/SimpleCartToast";
-import Contact from "./pages/Contact";
+// Route-level code splitting: Home ships in the main bundle, the rest load on demand.
+const Shop = lazy(() => import("./pages/Shop"));
+const Product = lazy(() => import("./pages/Product"));
+const Cart = lazy(() => import("./pages/Cart"));
+const Checkout = lazy(() => import("./pages/Checkout"));
+const Wishlist = lazy(() => import("./pages/Wishlist"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
-const App = () => {
-  // In your main App component or Footer component
+function ScrollToTop() {
+  const { pathname } = useLocation();
   useEffect(() => {
-    const handleScroll = () => {
-      const backToTop = document.querySelector(".back-to-top");
-      if (backToTop) {
-        if (window.scrollY > 500) {
-          backToTop.classList.add("show");
-        } else {
-          backToTop.classList.remove("show");
-        }
-      }
-    };
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+export default function App() {
   return (
-    <div>
-      <CartProvider>
-        <SimpleCartToast/>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact/>} />
-        </Routes>
-      </CartProvider>
-
+    <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
+      <ScrollToTop />
+      <AnnouncementBar />
+      <Header />
+      <main id="main">
+        <Suspense fallback={<div style={{ minHeight: "70vh" }} aria-busy="true" />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/:category" element={<Shop />} />
+            <Route path="/products" element={<Navigate to="/shop" replace />} />
+            <Route path="/product/:slug" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </main>
       <Footer />
-    </div>
+      <CartDrawer />
+      <SearchOverlay />
+      <Toast />
+    </>
   );
-};
-
-export default App;
+}

@@ -1,0 +1,127 @@
+.shop .page-hero {
+  border-bottom: 0;
+  padding-bottom: var(--s-5);
+}
+
+.shop__bar {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 20;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+}
+.shop__tabs {
+  display: flex;
+  gap: var(--s-5);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.shop__tabs::-webkit-scrollbar {
+  display: none;
+}
+.shop__tab {
+  flex-shrink: 0;
+  padding: var(--s-4) 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--ink-3);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color var(--dur), border-color var(--dur);
+}
+.shop__tab:hover {
+  color: var(--ink);
+}
+.shop__tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.shop__body {
+  padding-top: var(--s-5);
+}
+.shop__filters {
+  display: grid;
+  gap: var(--s-4);
+  margin-bottom: var(--s-6);
+}
+.shop__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  align-items: center;
+}
+.shop__divider {
+  width: 1px;
+  height: 24px;
+  background: var(--line-strong);
+  margin-inline: var(--s-2);
+}
+.shop__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding-inline: var(--s-2);
+  min-height: 40px;
+}
+.shop__sortrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop__count {
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+}
+.shop__sort {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.shop__sort select {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  padding: var(--s-2) var(--s-6) var(--s-2) var(--s-2);
+  min-height: 40px;
+  cursor: pointer;
+}
+.shop__sort svg {
+  position: absolute;
+  right: var(--s-2);
+  pointer-events: none;
+}
+
+.shop__empty {
+  text-align: center;
+  padding: var(--s-9) 0;
+  display: grid;
+  justify-items: center;
+  gap: var(--s-3);
+}
+.shop__empty h2 {
+  font-size: var(--fs-2xl);
+}
+
+@media (max-width: 700px) {
+  .shop__chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-inline: calc(-1 * var(--gutter));
+    padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .shop__chips::-webkit-scrollbar {
+    display: none;
+  }
+  .shop__chips .chip,
+  .shop__clear {
+    flex-shrink: 0;
+  }
+}

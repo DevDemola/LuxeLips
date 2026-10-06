@@ -1,0 +1,27 @@
+.toast-region {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 90;
+  pointer-events: none;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--ink-inverse);
+  padding: 12px 18px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  animation: fade-up 260ms var(--ease);
+}
+.toast svg {
+  color: var(--rose-soft);
+  flex-shrink: 0;
+}
